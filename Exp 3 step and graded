@@ -1,0 +1,47 @@
+Exp 3 step
+clc,clear,close;
+n1 = input("Enter RI of core:");
+n2 = input("Enter RI of cladding:");
+a = input("Enter radius of core:");
+b = input("Enter radius of cladding:");
+r = 0:1e-7:b;
+L = length(r);
+for i = 1:1:L
+if r(i) < a
+n(i) = n1;
+else
+n(i) = n2;
+endif
+endfor
+plot(r,n);
+axis([0 b n2-0.01 n1+0.01]);
+xlabel("radial distance");
+ylabel("Refractive Index");
+title("RI vs radial distance for SI fiber");
+
+
+3.2 Graded
+clc,clear,close;
+n1 = input("Enter RI of core:");
+n2 = input("Enter RI of cladding:");
+a = input("Enter radius of core:");
+b = input("Enter radius of cladding:");
+r = 0:1e-7:b;
+L = length(r);
+Delta = (n1^2 - n2^2)/ (2n1^2);
+alpha = [1 2 3 15];
+for j = 1:4
+for i = 1:L
+if r(i) <= a
+n(j,i) = n1 * sqrt(1 - 2Delta*(r(i)/a)^alpha(j));
+else
+n(j,i) = n2;
+endif
+endfor
+endfor
+plot(r,n(1,:),r,n(2,:),r,n(3,:),r,n(4,:));
+legend("alpha = 1", "alpha = 2","alpha = 3","alpha = 15");
+axis([0 b n2-0.01 n1+0.01]);
+xlabel("radial distance");
+ylabel("Refractive Index");
+title("RI vs radial distance for GI fiber");
