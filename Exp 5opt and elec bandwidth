@@ -1,0 +1,71 @@
+5.1
+clc, close, clear;
+Pdc = 300e-6; %Dc Power
+f=1e6:1e3:300e6; %Frequency Range
+w=2*pi*f;
+tou1=5e-9;
+Pew1=Pdc./sqrt(1+(w*tou1).^2);
+PRatio1=Pew1./Pdc;
+tou2=2e-9; %Carrier recombination lifetime
+Pew2=Pdc./sqrt(1+(w*tou2).^2);
+PRatio2=Pew2./Pdc;
+plot(log10(f),PRatio1,"k",log10(f),PRatio2,"r" );
+xlabel("Log of Frequency")
+ylabel("Power Ratio");
+title("Power Ratio Vs Frequency");
+legend("tou1=5ns","tou2=2ns");
+
+
+5ns code
+5ns:
+clc,clear,close;
+Pdc=300e-6;
+f1=20e6;
+f2=100e6;
+f3=200e6;
+w1=2*pi*f1;
+w2=2pif2;
+w3=2pif3;
+tou=5e-9; %carrier recombination lifetime
+Pew1=Pdc/sqrt(1+(w1tou)^2);
+Pew2=Pdc/sqrt(1+(w1tou)^2);
+Pew3=Pdc/sqrt(1+(w1tou)^2);
+Disp(“Output power(in uw) at 20MHz”);
+Disp(Pew11e6)
+Disp(“Output power(in uw) at 100MHz”);
+Disp(Pew21e6)
+Disp(“Output power(in uw) at 200MHz”);
+Disp(Pew31e6)
+BWopt1=sqrt(3)/(2pitou);
+Disp(“Optical BW in MHz”)
+Disp(BWopt11e-6);
+BWelect1=BWopt1/sqrt(2);
+Disp(“electrical BW in MHz”);
+Disp(BWelect11e-6);
+
+2ns code
+2ns:
+clc,clear,close;
+Pdc=300e-6;
+f1=20e6;
+f2=100e6;
+f3=200e6;
+w1=2pif1;
+w2=2pif2;
+w3=2pif3;
+tou=2e-9; %carrier recombination lifetime
+Pew1=Pdc/sqrt(1+(w1tou)^2);
+Pew2=Pdc/sqrt(1+(w1tou)^2);
+Pew3=Pdc/sqrt(1+(w1tou)^2);
+disp("Output power(in uw) at 20MHz");
+disp(Pew11e6)
+disp("Output power(in uw) at 100MHz");
+disp(Pew2*1e6)
+disp("Output power(in uw) at 200MHz");
+disp(Pew31e6)
+BWopt1=sqrt(3)/(2pitou);
+disp("Optical BW in MHz")
+disp(BWopt11e-6);
+BWelect1=BWopt1/sqrt(2);
+disp("electrical BW in MHz");
+disp(BWelect1*1e-6);
