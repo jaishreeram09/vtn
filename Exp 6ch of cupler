@@ -1,0 +1,35 @@
+Clc,clear,close;
+P1 = 100e6;
+Lambda = 1000e-9;
+N = 1.65;
+K = 2pi/lambdan;
+Z = 0:0.01e-9:500e-9;
+P3 = P1*(cos(k.z)).^2;
+P4 = P1(sin(k.*z)).^2;
+Plot(z,P3/P1,”k-“,z,P4/P1,”k—“);
+Legend(“P3/P1”,”P4/P1”);
+Xlabel(“Coupler draw length in nm”);
+Ylabel(“Power Ratios”);
+Title(“Coupler Power Distribution”);
+
+6.2
+clc;
+clear;
+% Given values (in micro watts)
+P1 = 60; % Input power
+P2 = 0.004; % Output at port 2
+P3 = 26.0; % Output at port 3
+P4 = 27.5; % Output at port 4
+% Excess loss
+excess_loss = 10 * log10(P1 / (P3 + P4));
+% Insertion loss (port 1 to port 4)
+insertion_loss = 10 * log10(P1 / P4);
+% Crosstalk
+crosstalk = 10 * log10(P2 / P1);
+% Split ratio
+split_ratio = (P3 / (P3 + P4)) * 100;
+% Display results
+fprintf("Excess Loss = %.4f dB\n", excess_loss);
+fprintf("Insertion Loss = %.4f dB\n", insertion_loss);
+fprintf("Crosstalk = %.4f dB\n", crosstalk);
+fprintf("Split Ratio = %.2f %%\n", split_ratio);
