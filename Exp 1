@@ -1,0 +1,66 @@
+Exp 1.1
+Clc,clear,close;
+N1=input(“Enter RI core:”)
+N2=input(“Enter RI cladding:”)
+NA = sqrt(n1^2-n2^2)
+Disp(“Numerical Aperture”)
+Disp(NA);
+phiC=asin(n2/n1);
+display(“Critical angle in degree.”)
+disp(phiC180/pi);
+n0 = 1;
+thetaA = asin(NA/n0);
+disp(“acceptance angle in degree”);
+disp(thetaA180/pi
+
+Exp 1.2
+Clc,clear,close;
+V1=input(“velocity in core:”);
+Phic=input(“Enter critical angle in degree:”);
+Phic=phicpi/180;
+C=3e8;
+N1=c/v1;
+Disp(“RI of core”)
+Disp(n1);
+N2 = n1sin(phic);
+Disp(“RI of cladding”);
+Disp(n2);
+NA = sqrt(n1^2-n2^2);
+Disp(“Numerical Aperture”);
+Disp(NA);
+N0 = 1;
+thetaA = asin(NA/n0);
+disp(“acceptance angle in degree”);
+disp(thetaA*180/pi);
+
+Exp 1.3
+Clc,clear,close;
+thetaA=input(“Enter given acceptance angle:”);
+delta=input(“Enter refractive index difference:”);
+NA = sind(thetaA);
+Disp(“Numerical Aperture”)
+Disp(NA);
+N1= NA / sqrt(2delta);
+Disp(“RI of core”);
+Disp(n1);
+N2=n1(1-delta);
+Disp(“RI of cladding”);
+Disp(n2);
+phiC=asind(n2/n1);
+display(“Critical angle in degree.”)
+disp(phiC);
+
+Exp 1.4
+clc,clear,close;
+NA = input("Enter given NA:");
+n1 = input("Enter RI of core:");
+n2 = sqrt(n1^2-NA^2);
+disp("RI of cladding");
+disp(n2);
+n0=1.33;
+thetaA= asin(NA/n0);
+disp("acceptance angle in degree");
+disp(thetaA180/pi);
+phiC=asin(n2/n1);
+display("Critical angle in degree.")
+disp(phiC180/pi);
