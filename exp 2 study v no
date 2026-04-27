@@ -1,0 +1,56 @@
+exp 2.1
+Clc,clear,close;
+Lambda1 = input(“enter first wavelength:”);
+Lambda2 = input(“enter second wavelength:”);
+Lambda3 = input(“enter third wavelength:”);
+A = input(“enter core radius:”);
+N1 = input(“enter RI of core:”);
+N2 = input(“enter RI of cladding:”);
+NA = sqrt(n1^2 – n2^2);
+Disp(“Numerical Aperture”);
+Disp(NA);
+V1 = (2pi/lambda1)aNA;
+Disp(“V number at 850nm”);
+Disp(V1);
+Ms1 = V1^2/2;
+Disp(“No. of modes at 850nm”);
+Disp(Ms1);
+V2 = (2pi/lambda2)aNA;
+Disp(“V number at 1300nm”);
+Disp(V1);
+Ms2 = V1^2/2;
+Disp(“No. of modes at 1300nm”);
+Disp(Ms2);
+V3 = (2*pi/lambda3)aNA;
+Disp(“V number at 1550nm”);
+Disp(V1);
+Ms3 = V1^2/2;
+Disp(“No. of modes at 1550nm”);
+Disp(Ms3);
+
+EXP 2.2
+Clc,clear,close;
+D = input(“enter core diameter:”);
+N1 = input(“enter RI of core:”);
+Delta = input(“enter RRID:”);
+A =d/2;
+NA = n1sqrt(2delta);
+Vc = 2.405; % for single mode SI fiber
+Lambda = 2pi/Vca*NA;
+Disp(“shortest wavelength”);
+Disp(lambda);
+
+
+EXP 2.3
+Clc,clear,close;
+A = input(“enter core radius:”);
+Lambda = 800:1:1600; % in nm
+NA = [0.1 0.15 0.2];
+V1 = (2*pi./(lambda*1e-9))*a*NA(1);
+V2 = (2*pi./(lambda*1e-9))*a*NA(2);
+V3 = (2*pi./(lambda*1e-9))*a*NA(3);
+Plot(lambda,V1,”k:”,lambda,V2,”k-“,lambda,V3,”k—“);
+Legend(“NA = 0.1”,”NA = 0.15”, “NA =0.2”);
+Xlabel(“wavelength in nm”);
+Ylabel(“V number”);
+Title(“V number as function of wavelength”);
