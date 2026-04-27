@@ -1,0 +1,23 @@
+clc,close,clear;
+Pi = input(" Enter input power : ");
+alpha = [0.2 ,0.5 ,2]; %distance in km
+L = 0:0.01:20; %attenuation in dB/km
+Po1 = Pi./(10.^(alpha(1)*L/10));
+Po2 = Pi./(10.^(alpha(2)*L/10));
+Po3 = Pi./(10.^(alpha(3)*L/10));
+plot (L, Po1,"k:", L, Po2,"k-", L, Po3,"k--");
+legend("alpha = 0.2 dB/km","alpha = 0.5 dB/km","alpha = 2 dB/km");
+xlabel("Distance in km");
+ylabel("O/P power in mW");
+title("O/P power v/s DIstance");
+Ps = 2e-6; %receiver sensitivity
+Pin = 1.5e-3; %input power
+L1 = 10/alpha(1)*log10(Pin/Ps);
+disp("Max. Repeatless distance at alpha = 0.2db/km");
+disp(L1);
+L2 = 10/alpha(2)*log10(Pin/Ps);
+disp("Repeatless distance at alpha = 0.5db/km");
+disp(L2);
+L3 = 10/alpha(3)*log10(Pin/Ps);
+disp("Repeatless distance at alpha = 2db/km");
+disp(L3);
